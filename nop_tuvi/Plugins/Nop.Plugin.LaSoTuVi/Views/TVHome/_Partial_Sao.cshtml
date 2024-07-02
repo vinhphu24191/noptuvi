@@ -1,0 +1,38 @@
+﻿@using Nop.Plugin.LaSoTuVi.TuViSerives.Data
+@using Nop.Plugin.LaSoTuVi.Extern
+
+@model  SaoTuVi
+@if (Model.LoaiViTri == LoaiViTri.ChinhDieu)
+{
+    <div>
+        <a href="#" data-toggle="popover" title="Thông tin" data-content="@Model.LoaiDacTinh.FullName()">
+            <span class="sao @Model.classCSSAll()">
+                @if (Model.AmDuong == AmDuong.Duong)
+                {
+                    <i class="fa fa-plus-circle" style="font-size:10px; opacity:0.7;color:@(Model.MauSac_NguHanh_CSS());"></i>
+                }
+                else
+                {
+                    <i class="fa fa-minus-circle" style="font-size:10px; opacity:0.7;color:@(Model.MauSac_NguHanh_CSS());"></i>
+                }
+                <b style="color:@(Model.MauSac_NguHanh_CSS())">@Model.Ten@(Model.TenDoAnhHuong())</b>
+            </span>
+        </a>
+    </div>
+}
+else if (Model.LoaiViTri == LoaiViTri.SaoTot || Model.LoaiViTri == LoaiViTri.SaoXau)
+{
+    <div>
+        <a href="#" data-toggle="popover" title="Thông tin" data-content="@Model.LoaiDacTinh.FullName()">
+            @if (Model.Sao.IsInDam())
+            {
+                <span class="sao @Model.classCSSAll()" data-toggle="popover" title="Thông tin" data-content="@Model.LoaiDacTinh.FullName()"><b style="color:@(Model.MauSac_NguHanh_CSS());font-size:11px">@Model.Ten@(Model.TenDoAnhHuong())</b></span>
+
+            }
+            else
+            {
+                <span class="sao @Model.classCSSAll()" data-toggle="popover" title="Thông tin" data-content="@Model.LoaiDacTinh.FullName()" style="color:@(Model.MauSac_NguHanh_CSS());font-size:10.5px">@Model.Ten@(Model.TenDoAnhHuong())</span>
+            }
+        </a>
+    </div>
+}

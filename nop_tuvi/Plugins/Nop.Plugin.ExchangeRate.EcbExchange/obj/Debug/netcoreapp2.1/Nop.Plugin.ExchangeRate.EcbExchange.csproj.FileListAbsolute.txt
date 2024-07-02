@@ -1,0 +1,13 @@
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\plugin.json
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\logo.jpg
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.deps.json
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.dll
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\ExchangeRate.EcbExchange\Nop.Plugin.ExchangeRate.EcbExchange.pdb
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.csproj.AssemblyReference.cache
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.AssemblyInfoInputs.cache
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.AssemblyInfo.cs
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.csproj.CoreCompileInputs.cache
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.csproj.CopyComplete
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.dll
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\obj\Debug\netcoreapp2.1\Nop.Plugin.ExchangeRate.EcbExchange.pdb

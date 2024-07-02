@@ -1,0 +1,91 @@
+﻿@using Nop.Plugin.LaSoTuVi.TuViSerives.Data
+@using Nop.Plugin.LaSoTuVi.Extern
+@model CungLaSo
+<div class="td-content">
+
+    <div class="laso-header">
+        <div class="h-left"><span style="color:@Model.NguHanh.MauSac_NguHanh_CSS(); font-weight:bold;">@(Model.ThienCan.FullName().Substring(0, 1)).@(Model.DiaChi.FullName())</span></div>
+        <div class="h-center"><b>@(Model.Cung[0].FullName((bool?)TempData["GioiTinh"]).ToUpper())</b> @(Html.Raw(Model.Cung.Count == 2 ? "&lt;<b>" + Model.Cung[1].FullName().ToUpper() + "</b>&gt;" : ""))</div>
+        <div class="h-right">@Model.DaiVanNam</div>
+    </div>
+    <div class="laso-content">
+        <div class="c-header">
+            @foreach (var item in Model.SaoTuVi.Where(_ => _.LoaiViTri == LoaiViTri.ChinhDieu))
+            {
+
+                <partial name="~/Plugins/LaSoTuVi/Views/TVHome/_Partial_Sao.cshtml" model="item" />
+            }
+        </div>
+        <div class="c-center">
+            <div class="c-left">
+                @foreach (var item in Model.SaoTuVi.Where(_ => _.LoaiViTri == LoaiViTri.SaoTot))
+                {
+                    <partial name="~/Plugins/LaSoTuVi/Views/TVHome/_Partial_Sao.cshtml" model="item" />
+                }
+            </div>
+            <div class="c-right">
+                @foreach (var item in Model.SaoTuVi.Where(_ => _.LoaiViTri == LoaiViTri.SaoXau))
+                {
+                    <partial name="~/Plugins/LaSoTuVi/Views/TVHome/_Partial_Sao.cshtml" model="item" />
+                }
+            </div>
+            @if (Model.SaoTuVi.Any(_ => _.Sao == Sao.Tuan) && Model.SaoTuVi.Any(_ => _.Sao == Sao.Triet))
+            {
+                if ((new List<int>() { 3, 5, 8, 10 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;bottom: -9px;left: 50px;">TUẦN - TRIỆT</span>
+                }
+                else if ((new List<int>() { 0 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;top: -9px;left: -37px;">TUẦN - TRIỆT</span>
+                }
+                else if ((new List<int>() { 6 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;bottom: -11px;right: -37px;">TUẦN - TRIỆT</span>
+                }
+            }
+            else if (Model.SaoTuVi.Any(_ => _.Sao == Sao.Tuan) && !Model.SaoTuVi.Any(_ => _.Sao == Sao.Triet))
+            {
+                if ((new List<int>() { 3, 5, 8, 10 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;bottom: -9px;left: 65px;">TUẦN</span>
+                }
+                else if ((new List<int>() { 0 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;top: -9px;left: -20px;">TUẦN</span>
+                }
+                else if ((new List<int>() { 6 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;bottom: -11px;right: -20px;">TUẦN</span>
+                }
+            }
+            else if (!Model.SaoTuVi.Any(_ => _.Sao == Sao.Tuan) && Model.SaoTuVi.Any(_ => _.Sao == Sao.Triet))
+            {
+                if ((new List<int>() { 3, 5, 8, 10 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;bottom: -9px;left: 65px;">TRIỆT</span>
+                }
+                else if ((new List<int>() { 0 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;top: -9px;left: -20px;">TRIỆT</span>
+                }
+                else if ((new List<int>() { 6 }).Contains((int)Model.DiaChi))
+                {
+                    <span class="tuantriet" style="position: absolute;bottom: -11px;right: -20px;">TRIỆT</span>
+                }
+            }
+        </div>
+    </div>
+    <div class="laso-footer">
+        <div class="f-left">
+            @Model.TieuHanNam.FullName()
+        </div>
+        <div class="f-center">
+            <div><b>@Model.TrangSinh.FullName()</b></div>
+        </div>
+        <div class="f-right">
+            @Model.NguyetHan.FullName()
+        </div>
+    </div>
+</div>
+<div class="anhnen @Model.DiaChi.ToString().ToLower()"></div>

@@ -1,0 +1,105 @@
+﻿@using Nop.Plugin.LaSoTuVi.TuViSerives.Data
+@using Nop.Plugin.LaSoTuVi.Extern
+@model  LaSo
+<div class="td-content">
+    <div style="padding:5px 30px;">
+        <div class="text-center">
+            <label style="margin-top:5px;">DIỄN ĐÀN TỬ VI TÂN NAM</label>
+            <a href="https://www.facebook.com/groups/tuvitannam/">https://www.facebook.com/groups/tuvitannam/</a>
+            <hr style="margin-top: 0px;margin-bottom: 0px;border: 1px solid;" />
+            <label class="h4">LÁ SỐ TỬ VI</label>
+        </div>
+        <table id="table-tuvi-info">
+            <tbody>
+
+                <tr>
+                    <td>Tên:</td>
+                    <td colspan="2" id="Ten">@Model.Ten</td>
+                </tr>
+                <tr>
+                    <td>Năm sinh:</td>
+                    <td>@Model.NgaySinh_DuongLich.ToString("yyyy")</td>
+                    <td>@Model.ThienCan_NamSinh.FullName() @Model.DiaChi_NamSinh.FullName()</td>
+                </tr>
+                <tr>
+                    <td>Tháng sinh:</td>
+                    <td>@Model.NgaySinh_DuongLich.Month (@Model.ThangSinh_AmLich)</td>
+                    <td>@Model.ThienCan_ThangSinh.FullName() @Model.DiaChi_ThangSinh.FullName()  </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh:</td>
+                    <td>@Model.NgaySinh_DuongLich.Day (@Model.NgaySinh_AmLich)</td>
+                    <td>@Model.ThienCan_NgaySinh.FullName() @Model.DiaChi_NgaySinh.FullName() </td>
+                </tr>
+                <tr>
+                    <td>Giờ sinh:</td>
+                    <td>@Model.GioSinh giờ @Model.Phut phút</td>
+                    <td>@Model.ThienCan_GioSinh.FullName() @Model.DiaChi_GioSinh.FullName()</td>
+                </tr>
+
+                <tr><td> </td></tr>
+                <tr><td>Năm Xem:</td><td>@Model.NamXemHan</td><td>@Model.ThienCan_NamXem.FullName() @Model.DiaChi_NamXem.FullName()</td></tr>
+                <tr><td>Tuổi:</td><td>@Model.Tuoi </td></tr>
+
+                <tr><td> </td></tr>
+                <tr><td>Âm dương:</td><td>@Model.AmDuongNamNu.FullName()</td></tr>
+                <tr><td>Mệnh:</td><td>(@Model.NguHanhMenh.FullName()) </td><td>@Model.BanMenh.FullName() </td></tr>
+                <tr><td>Cục:</td><td>@Model.Cuc.FullName()</td></tr>
+
+                <tr><td> </td></tr>
+                <tr><td>Chủ Mệnh:</td><td>@Model.ChuMenh.FullName() </td></tr>
+                <tr><td>Chủ Thân:</td><td>@Model.ChuThan.FullName()</td></tr>
+
+                <tr><td> </td></tr>
+                <tr><td> </td><td colspan="2"><b>@Model.ThuanNghichLy.FullName()</b></td></tr>
+                <tr><td> </td><td colspan="2"><b>@Model.CucMenh.FullName()</b></td></tr>
+                <tr><td> </td><td colspan="2"><b>@Model.ThanCu()</b></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="anhnen trungtam"></div>
+<canvas id="myCanvas" style="position:absolute;opacity:0.4;z-index:0;"></canvas>
+<script>
+    $(document).ready(function () {
+        var h = $(".anhnen.trungtam").height();
+        var w = $(".anhnen.trungtam").width();
+        var c = document.getElementById("myCanvas");
+        var tamhop = [@((int)Model.CungLaSo.FirstOrDefault(_=>_.Cung.Any(m=>m == Cung.Menh)).DiaChi), @((int)Model.CungLaSo.FirstOrDefault(_=>_.Cung.Any(m=>m == Cung.TaiBach)).DiaChi), @((int)Model.CungLaSo.FirstOrDefault(_=>_.Cung.Any(m=>m == Cung.QuanLoc)).DiaChi), @((int)Model.CungLaSo.FirstOrDefault(_=>_.Cung.Any(m=>m == Cung.ThienDi)).DiaChi)];
+        var points = [
+            { x: (w / 4) * 3, y: h },
+            { x: (w / 4), y: h },
+            { x: 0, y: h },
+            { x: 0, y: (h / 4) * 3 },
+            { x: 0, y: (h / 4) },
+            { x: 0, y: 0 },
+            { x: (w / 4), y: 0 },
+            { x: (w / 4) * 3, y: 0 },
+            { x: w, y: 0 },
+            { x: w, y: (h / 4) },
+            { x: w, y: (h / 4) * 3 },
+            { x: w, y: h }
+        ];
+        var context = init_Canvas(c, w, h);
+
+        //drawLine(context, 0, 0, w, h);
+        drawLine(context, points[tamhop[0]].x, points[tamhop[0]].y, points[tamhop[1]].x, points[tamhop[1]].y);
+        //drawLine(context, points[tamhop[1]].x, points[tamhop[1]].y, points[tamhop[2]].x, points[tamhop[2]].y);
+        drawLine(context, points[tamhop[2]].x, points[tamhop[2]].y, points[tamhop[0]].x, points[tamhop[0]].y);
+        drawLine(context, points[tamhop[0]].x, points[tamhop[0]].y, points[tamhop[3]].x, points[tamhop[3]].y);
+    });
+
+    function init_Canvas(c, w, h) {
+        $(c).attr("width", w);
+        $(c).attr("height", h);
+        var ctx = c.getContext("2d");
+        return ctx;
+    }
+
+    function drawLine(context, form_x, form_y, to_x, to_y) {
+        context.moveTo(form_x, form_y);
+        context.lineTo(to_x, to_y);
+        context.stroke()
+    }
+
+</script>

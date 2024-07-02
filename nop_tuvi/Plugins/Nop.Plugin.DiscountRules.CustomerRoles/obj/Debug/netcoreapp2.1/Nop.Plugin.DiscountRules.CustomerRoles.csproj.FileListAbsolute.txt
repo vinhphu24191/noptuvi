@@ -1,0 +1,14 @@
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\plugin.json
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Views\Configure.cshtml
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Views\_ViewImports.cshtml
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\logo.jpg
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.deps.json
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.dll
+D:\Workspace\nop_tuvi\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.pdb
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.AssemblyInfoInputs.cache
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.AssemblyInfo.cs
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.csproj.CoreCompileInputs.cache
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.csproj.CopyComplete
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.dll
+D:\Workspace\nop_tuvi\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\netcoreapp2.1\Nop.Plugin.DiscountRules.CustomerRoles.pdb

@@ -1,0 +1,193 @@
+﻿
+<canvas id="canvas" style="border:0px solid black;" width="700" height="860"></canvas>
+<script>
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    $.ajax({
+        url: '/Home/Index3',
+        type: 'GET'
+    }).done(function (rs) {
+
+        var data = '<svg xmlns="http://www.w3.org/2000/svg" width="700" height="860">' +
+            `
+  <style>
+.h4, h4 {
+    font-size: 1.5rem;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+label {
+    cursor: default;
+}
+.text-center {
+    text-align: center!important;
+}
+#table-tuvi {
+    width: 700px;
+    height: 860px;
+    background-color: #f5f2ee;
+    font-size: 12px;
+    font-family: sans-serif;
+    border-collapse: collapse;
+}
+
+    #table-tuvi > tbody > tr > td {
+        width: 25%;
+        height: 25%;
+        vertical-align: top;
+        padding: 8px 5px;
+        position: relative;
+        max-height: 25%;
+        min-height: 25%;
+    }
+
+        #table-tuvi > tbody > tr > td.center {
+            width: 50%;
+            height: initial;
+            vertical-align: initial;
+            padding: initial;
+            max-height: initial;
+            min-height: initial;
+            padding-top: 10px;
+        }
+
+#table-tuvi-info {
+    font-size: 11.5px;
+    width: 100%;
+    line-height: 16px;
+
+}
+
+    #table-tuvi-info > tbody > tr > td:first-child {
+        font-weight: bold;
+        text-align: left;
+    }
+
+    #table-tuvi-info > tbody > tr > td:nth-child(2) {
+        color: #0077dd;
+    }
+
+    #table-tuvi-info > tbody > tr > td:nth-child(3) {
+        color: #0077dd;
+        font-weight: bold;
+        text-align: right;
+    }
+
+.laso-header {
+    display: flex;
+    text-align: center;
+    font-size: 11px;
+}
+
+    .laso-header .h-left {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .laso-header .h-center {
+        flex-grow: 3;
+        text-align: center;
+        margin-left: -10px;
+    }
+
+    .laso-header .h-right {
+        flex-grow: 1;
+        text-align: right;
+    }
+
+.laso-content {
+    padding-bottom: 13px;
+}
+
+    .laso-content .c-header {
+        text-align: center;
+        height: 40px;
+        font-size: 14px;
+        line-height: 15px;
+        padding: 5px;
+    }
+
+    .laso-content .c-center {
+        display: flex;
+    }
+
+    .laso-content .c-left {
+        font-size: 11px;
+        flex-grow: 2;
+        line-height: 14px;
+    }
+
+    .laso-content .c-right {
+        font-size: 11px;
+        flex-grow: 2;
+        text-align: right;
+        line-height: 14px;
+    }
+
+.laso-footer {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 10px);
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+    .laso-footer .f-left {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .laso-footer .f-center {
+        flex-grow: 3;
+        text-align: center;
+    }
+
+    .laso-footer .f-right {
+        flex-grow: 1;
+        text-align: right;
+    }
+
+.tuantriet {
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    font-size: 10px;
+    padding: 1px 5px;
+    font-weight: bold;
+}
+
+  </style>
+            `+
+            '<foreignObject width="100%" height="100%">' +
+            '<div xmlns="http://www.w3.org/1999/xhtml" >' +
+            rs +
+            '</div>' +
+            '</foreignObject>' +
+            '</svg>';
+        var DOMURL = window.URL || window.webkitURL || window;
+
+        var img = new Image();
+        var svg = new Blob([data], { type: 'image/svg+xml;charset=utf-8' });
+        var url = DOMURL.createObjectURL(svg);
+
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+            DOMURL.revokeObjectURL(url);
+        }
+
+        img.src = url;
+    });
+</script>

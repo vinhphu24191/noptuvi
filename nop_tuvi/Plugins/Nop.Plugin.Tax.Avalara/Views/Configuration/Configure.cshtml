@@ -1,0 +1,15 @@
+﻿@model Nop.Plugin.Tax.Avalara.Models.Configuration.ConfigurationModel
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+<form asp-controller="AvalaraTax" asp-action="Configure" method="post">
+    <div class="content">
+        <div class="form-horizontal">
+            <nop-tabs id="blog-post-edit">
+                <nop-tab asp-name="tab-configuration" asp-title="@T("Plugins.Tax.Avalara.Configuration")" asp-default="true">@await Html.PartialAsync("~/Plugins/Tax.Avalara/Views/Configuration/_Configuration.cshtml", Model)</nop-tab>
+                <nop-tab asp-name="tab-log" asp-title="@T("Plugins.Tax.Avalara.Log")">@await Html.PartialAsync("~/Plugins/Tax.Avalara/Views/Log/List.cshtml", Model)</nop-tab>
+            </nop-tabs>
+        </div>
+    </div>
+</form>

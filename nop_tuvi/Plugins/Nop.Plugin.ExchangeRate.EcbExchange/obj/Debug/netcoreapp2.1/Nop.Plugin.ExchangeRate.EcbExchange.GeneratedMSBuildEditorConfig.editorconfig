@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Nop.Plugin.ExchangeRate.EcbExchange
+build_property.ProjectDir = D:\Workspace\noptuvi\nop_tuvi\Plugins\Nop.Plugin.ExchangeRate.EcbExchange\

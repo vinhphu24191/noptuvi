@@ -1,0 +1,5 @@
+﻿{
+  "DataProvider": "sqlserver",
+  "DataConnectionString": "Data Source=103.48.194.118;Initial Catalog=nop_tuvi;Integrated Security=False;Persist Security Info=False;User ID=quaxinh;Password=quaxinh@123",
+  "RawDataSettings": {}
+}

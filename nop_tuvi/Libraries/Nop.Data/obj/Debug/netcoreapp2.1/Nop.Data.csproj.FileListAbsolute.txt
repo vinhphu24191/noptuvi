@@ -1,0 +1,12 @@
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\bin\Debug\netcoreapp2.1\Nop.Data.deps.json
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\bin\Debug\netcoreapp2.1\Nop.Data.dll
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\bin\Debug\netcoreapp2.1\Nop.Data.pdb
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\bin\Debug\netcoreapp2.1\Nop.Core.dll
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\bin\Debug\netcoreapp2.1\Nop.Core.pdb
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.csproj.AssemblyReference.cache
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.AssemblyInfoInputs.cache
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.AssemblyInfo.cs
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.csproj.CoreCompileInputs.cache
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.dll
+D:\Workspace\nop_tuvi\Libraries\Nop.Data\obj\Debug\netcoreapp2.1\Nop.Data.pdb

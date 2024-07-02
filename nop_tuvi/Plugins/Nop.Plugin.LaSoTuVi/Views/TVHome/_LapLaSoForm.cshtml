@@ -1,0 +1,98 @@
+﻿@using Nop.Plugin.LaSoTuVi.TuViSerives.Data
+@using Nop.Plugin.LaSoTuVi.Extern
+@using Nop.Plugin.LaSoTuVi.Models.LaSoTuVi
+
+@model CreateLaSoDuongLichModel
+<div style="border: 2px solid #ccc;padding: 15px;">
+    <h1 class="h3">Lập lá số</h1>
+    <form id="form-laplaso" action="@Url.Action("LapLaSo")" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1"></label>
+            @Html.TextBoxFor(_ => _.Ten, new { @placeholder = "Nhập tên", @class = "form-control" })
+            @Html.ValidationMessageFor(_ => _.Ten)
+        </div>
+        <div>
+            <div class="form-check custom-control custom-checkbox mr-sm-2">
+                @Html.RadioButtonFor(_ => _.GioiTinh, Model.GioiTinh, new { @checked = Model.GioiTinh ? "checked" : "", @class = "" })
+                <label class="form-check-label" for="GioiTinhNam">
+                    Nam
+                </label>
+
+                @Html.RadioButtonFor(_ => _.GioiTinh, !Model.GioiTinh, new { @checked = !Model.GioiTinh ? "checked" : "", @class = "" })
+                <label class="form-check-label" for="GioiTinhNu">
+                    Nữ
+                </label>
+            </div>
+
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Năm sinh</label>
+                <select class="custom-select mr-sm-2" id="Nam" name="Nam">
+                    @for (int i = 1900; i < DateTime.Now.Year + 10; i++)
+                    {
+                        <option value="@i" @(i == Model.Nam ? "selected" : "")>@i</option>
+                    }
+                </select>
+            </div>
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Tháng</label>
+                <select class="custom-select mr-sm-2" id="Thang" name="Thang">
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        <option value="@i" @(i == Model.Thang ? "selected" : "" )> Tháng @i</option>
+                    }
+                </select>
+            </div>
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Ngày</label>
+                <select class="custom-select mr-sm-2" id="Ngay" name="Ngay">
+                    @for (int i = 1; i <= 31; i++)
+                    {
+                        <option value="@i" @(i == Model.Ngay ? "selected" : "" )> @i</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Giờ</label>
+                <select class="custom-select mr-sm-2" id="Gio" name="Gio">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <option value="@i" @(i == Model.Gio ? "selected" : "" )> @i</option>
+                    }
+                </select>
+            </div>
+            <div class="col-xs-3 my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Phút</label>
+                <select class="custom-select mr-sm-2" id="Phut" name="Phut">
+                    @for (int i = 0; i < 60; i++)
+                    {
+                        <option value="@i" @(i == Model.Phut ? "selected" : "" )>  @i</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Năm xem hạn</label>
+                <select class="custom-select mr-sm-2" id="NamXemHan" name="NamXemHan">
+                    @for (int i = 1975; i < DateTime.Now.Year + 60; i++)
+                    {
+                        <option value="@i" @(i == Model.Nam ? "selected" : "")>@i</option>
+                    }
+                </select>
+            </div>
+        </div>
+     
+        <hr />
+        <div>
+            <span>&nbsp;</span>
+            <button type="button" name="submit" class="btn btn-primary mb-2 pull-right">Lập lá số</button>
+            @Html.ValidationMessageFor(_ => _.NamXemHan)
+        </div>
+
+    </form>
+</div>

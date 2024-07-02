@@ -1,0 +1,28 @@
+﻿.body {
+    font-size: 13px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+    .container.content {
+        margin-top: 10px;
+    }
+
+.bg-header {
+    background-color: #a2a2a2 !important;
+}
+
+.header-title-logo {
+    font-size: 22px;
+    color: red !important;
+    font-family: -webkit-pictograph;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #ab8ce4, 0 0 1em #ee991c, 0 0 0.2em #fffaf3;
+}
+
+.note {
+    font-size: 13px;
+    opacity: 0.8;
+}

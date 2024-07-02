@@ -1,0 +1,11 @@
+﻿{
+  "Group": "LaSoTuVi",
+  "FriendlyName": "Lá Số Tử Vi",
+  "SystemName": "LaSoTuVi",
+  "Version": "1.30",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "vinhphu24191 dev",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.LaSoTuVi.dll",
+  "Description": "Phần mềm luận đoán, hỗ trợ luận đoán tử vi"
+}
